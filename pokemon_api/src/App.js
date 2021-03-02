@@ -1,11 +1,11 @@
 import './App.css';
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 function App() {
   const [pokemon, setPokemon] = useState({});
 
   //const fetchPokemon = () => {
-  useEffect(() => {
+ const buttonClick = () => {
     fetch('https://pokeapi.co/api/v2/pokemon?limit=808')
       .then((response) => {
         return response.json()
@@ -26,11 +26,11 @@ function App() {
       //.catch((error) => {
       //  console.log(error);
      // })
-  }, []);
+  };
 
   return (
     <div className="App">
-      <button onClick={setPokemon}>Fetch Pokemon</button>
+      <button onClick={buttonClick}>Fetch Pokemon</button>
       {pokemon.individuals ? pokemon.individuals.map((item, index)=>{
         console.log('hello!')
         return(<div key={index}>{item.name}</div>)

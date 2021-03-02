@@ -1,18 +1,13 @@
 import React from 'react';
 import DisplayPokemon from './displayPokemon.js'
 
-const CatchEm = () => {
-    const displayPokemon = (e) => {
-        e.preventDefault();
-        pokemon.individuals ? pokemon.individuals.map((item, index)=>{
-            console.log('hello!')
-            return(<div key={index}>{item.name}</div>)
-          }):null}
+const CatchEm = ({DisplayPokemon}) => {
+    const  showPokemon = (e) => {
 
     }
     return (
         <div>
-        <button onClick={displayPokemon}>Fetch Pokemon</button>
+        <button onClick={DisplayPokemon}>Fetch Pokemon</button>
         </div>
     
     
